@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 키워드 생성기</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .keyword-box {
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            background: #ffecb3;
+            color: #444;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: #ff6f61;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: #d9534f;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎲 랜덤 키워드 생성기 🎲</h2>
+        <div class="keyword-box" id="place">🔹 장소: </div>
+        <div class="keyword-box" id="event">🔹 사건/상황: </div>
+        <div class="keyword-box" id="person">🔹 인물: </div>
+        <div class="keyword-box" id="special">🔹 특별한 요소: </div>
+        <button onclick="generateKeywords()">키워드 뽑기 🎉</button>
+    </div>
+
+    <script>
+        const places = ["학교 🏫", "놀이공원 🎡", "폐가 🏚", "바다 🌊", "우주 🚀", "지하실 🏢"];
+        const events = ["실험 🧪", "실종 🚨", "대결 ⚔️", "발견 🔍", "충격 😱", "감동 🥺"];
+        const persons = ["선생님 👨‍🏫", "친구 👫", "해커 🕵️‍♂️", "AI 🤖", "유령 👻", "연예인 🌟"];
+        const specials = ["1억 원 💰", "금지된 ❌", "초능력 ⚡", "미스터리 🕵️", "최초/최후 🔥", "극한 💀"];
+
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function generateKeywords() {
+            document.getElementById("place").innerText = "🔹 장소: " + getRandomItem(places);
+            document.getElementById("event").innerText = "🔹 사건/상황: " + getRandomItem(events);
+            document.getElementById("person").innerText = "🔹 인물: " + getRandomItem(persons);
+            document.getElementById("special").innerText = "🔹 특별한 요소: " + getRandomItem(specials);
+        }
+    </script>
+</body>
+</html>
